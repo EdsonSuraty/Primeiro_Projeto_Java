@@ -19,9 +19,7 @@ public class Conversao_temperatura_exercicio {
 
     public static double converterTemperatura(double temperaturaCelsius){
 
-        double temperaturaFahrenheit = (temperaturaCelsius * 1.8) +32;
-
-        return  temperaturaFahrenheit;
+        return (temperaturaCelsius * 1.8) +32;
 
     }
 
