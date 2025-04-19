@@ -7,17 +7,18 @@ public class Jogo_de_Adivinhacao {
         Scanner entradaDeDados = new Scanner(System.in);
         Random gerador  = new Random();
 
-        int numeroAleatorio = gerador.nextInt(100);
+        int numeroAleatorio = gerador.nextInt(101);
         int i = 0;
         int numero = 0;
 
-        while (numero != numeroAleatorio && i < 6){
+        while (numero != numeroAleatorio && i < 5){
 
             System.out.println("Escreva um número aleatório de 0 a 100");
             numero = entradaDeDados.nextInt();
 
             if (numero < 0 || numero > 100){
                 System.out.println("Número inválido. Favor escrever um número de 0 a 100");
+                continue;
             } else if (numero > numeroAleatorio){
                 System.out.println("O número escolhido é maior que o número gerado. Tente novamente");
                 i++;
@@ -30,9 +31,11 @@ public class Jogo_de_Adivinhacao {
                 System.out.println("Parabens, você acertou o número aleatório");
                 i++;
                 System.out.println("Número de tentativas: " + i);
+                break;
             }
-            if (i == 6) {
+            if (i == 5) {
                 System.out.println("Você atingiu o limite de tentativas, favor reiniciar.");
+                break;
             }
         }
     }
