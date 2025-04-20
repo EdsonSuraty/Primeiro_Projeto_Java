@@ -19,24 +19,24 @@ public class Jogo_de_Adivinhacao {
             if (numero < 0 || numero > 100){
                 System.out.println("Número inválido. Favor escrever um número de 0 a 100");
                 continue;
-            } else if (numero > numeroAleatorio){
+            }
+
+            i++;
+
+            if (numero > numeroAleatorio){
                 System.out.println("O número escolhido é maior que o número gerado. Tente novamente");
-                i++;
-                System.out.println("Número de tentativas: " + i);
             } else if (numero < numeroAleatorio){
                 System.out.println("O número escolhido é menor que o número gerado. Tente novamente");
-                i++;
-                System.out.println("Número de tentativas: " + i);
             } else {
                 System.out.println("Parabens, você acertou o número aleatório");
-                i++;
                 System.out.println("Número de tentativas: " + i);
                 break;
             }
-            if (i == 5) {
-                System.out.println("Você atingiu o limite de tentativas, favor reiniciar.");
-                break;
-            }
+            System.out.println("Tentativas restantes: " + (5 - i));
+        }
+
+        if (numero != numeroAleatorio) {
+            System.out.println("Você atingiu o limite de tentativas, favor reiniciar. O número correto era: " + numeroAleatorio);
         }
     }
 }
